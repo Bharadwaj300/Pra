@@ -238,7 +238,8 @@ module dma_top (
     input rst_n,
 
     input [3:0] ch_req,
-    
+    input src_load_done,
+
     input [1:0] src_size,
     input [1:0] dst_size,
 
@@ -249,12 +250,12 @@ module dma_top (
     input delay_enable,
 
     /* SOURCE CHANNEL OUTPUTS */
-    output [4:0] src_addr_ch0, src_addr_ch1, src_addr_ch2, src_addr_ch3,
-    output [31:0] src_data_ch0, src_data_ch1, src_data_ch2, src_data_ch3,
+    //output [4:0] src_addr_ch0, src_addr_ch1, src_addr_ch2, src_addr_ch3,
+    //output [31:0] src_data_ch0, src_data_ch1, src_data_ch2, src_data_ch3,
 
     /* DEST CHANNEL OUTPUTS */
-    output [9:0] dest_addr_ch0, dest_addr_ch1, dest_addr_ch2, dest_addr_ch3,
-    output [31:0] dest_data_ch0, dest_data_ch1, dest_data_ch2, dest_data_ch3,
+    //output [9:0] dest_addr_ch0, dest_addr_ch1, dest_addr_ch2, dest_addr_ch3,
+    //output [31:0] dest_data_ch0, dest_data_ch1, dest_data_ch2, dest_data_ch3,
 
     output reg [1:0] src_channel,
     output reg [1:0] dst_channel,
@@ -268,10 +269,10 @@ module dma_top (
     output dma_active,
     output data_done,
     output wd_timeout,
-    output final_ack,
-    output src_load_done
-
+    output final_ack
 );
+
+
 
 ////////////////////////////////////////////////////////
 // 1. CHANNEL MAPPING
